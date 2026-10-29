@@ -1,0 +1,13 @@
+inventory_date,modality,files,logical_bytes,cloud_or_recall_files_at_scan,integrity_at_scan
+2026-10-04,other,2,11801,0,directory_stat_only_not_payload_verified
+2026-10-04,person_annotations_source,114,33664545,0,directory_stat_only_not_payload_verified
+2026-10-04,radar_stored_adc,30817,183289680753,10516,directory_stat_only_not_payload_verified
+2026-10-04,rgb,185787,98945902502,129923,directory_stat_only_not_payload_verified
+2026-10-04,rgb_pulse_acquisition_table,114,5185257,0,directory_stat_only_not_payload_verified
+2026-10-04,thermal,65367,26690659619,57669,directory_stat_only_not_payload_verified
+2026-10-04,thermal_acquisition_table,114,1428384,12,directory_stat_only_not_payload_verified
+2026-10-04,radar_acquisition_metadata,270,3611357,0,directory_stat_only_not_payload_verified
+2026-10-04,radar_acquisition_metadata,36,28763731,0,directory_stat_only_not_payload_verified
+2026-10-04,radar_native_adc,360,60897792000,0,directory_stat_only_not_payload_verified
+2026-10-04,radar_native_index,360,7620864,0,directory_stat_only_not_payload_verified
+2026-10-04,unclassified_image_or_video,1,113652,0,directory_stat_only_not_payload_verified

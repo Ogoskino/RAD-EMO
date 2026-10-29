@@ -1,0 +1,9 @@
+paper_id,revision,subset,participants,recordings,clips,window_convention
+affect,6,development,9,69,271,"four central video windows, 5-25s; common support"
+affect,6,transfer,6,44,167,"four central video windows, 5-25s; common support"
+joint,17,development,6,45,178,four central video windows paired to radar blocks
+joint,17,selection_within_development,3,24,94,subset of joint development; not additional observations
+joint,17,transfer,6,44,167,"same common video support, paired to radar blocks"
+radar,6,original_fit,3,21,105,five original radar windows per recording
+radar,6,original_selection,2,17,68,"four central radar blocks; original support, not common joint subset"
+radar,6,original_transfer,6,,178,"original radar support, not common joint subset"

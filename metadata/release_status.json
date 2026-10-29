@@ -1,0 +1,40 @@
+{
+  "status": "documentation_repository",
+  "prepared_date": "2026-10-29",
+  "repository_url": "https://github.com/Ogoskino/RAD-EMO",
+  "dataset_landing_url": "https://doi.org/10.5281/zenodo.23765400",
+  "dataset_doi": null,
+  "dataset_release_version": null,
+  "approved_creators": [
+    {
+      "name": "Okafor, Ogonna",
+      "affiliation": "Nottingham Trent University"
+    }
+  ],
+  "data_licence": null,
+  "public_downloads_available": false,
+  "planned_archive": "Zenodo recording-level sensor dataset with images, plus derived companion, linked to NTU preservation",
+  "planned_repository_name": "RAD-EMO",
+  "embargo_end_event": "Final approved thesis submitted to IRep before degree conferment",
+  "embargo_end_date": null,
+  "public_release_includes_participant_rows": false,
+  "creator_list_confirmed_by_user": true,
+  "zenodo_draft_id": 23765400,
+  "zenodo_reserved_doi": "10.5281/zenodo.23765400",
+  "ntu_preservation_url": null,
+  "dmp_repository_addendum_status": "prepared_review_pending",
+  "contributors": [
+    {
+      "name": "Mwanje, Maria",
+      "affiliation": "Nottingham Trent University",
+      "type": "DataCollector"
+    },
+    {
+      "name": "Adama, David",
+      "affiliation": "Nottingham Trent University",
+      "type": "Supervisor"
+    }
+  ],
+  "doi_status": "reserved_user_reported_not_registered",
+  "browser_draft_exists_user_reported": true
+}

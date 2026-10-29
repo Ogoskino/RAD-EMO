@@ -1,0 +1,195 @@
+{
+  "schema": "rad_emo_recording_level_raw_release_scope_v2",
+  "prepared_utc": "2026-10-29T13:26:54.701927+00:00",
+  "publication_status": "local_metadata_only_raw_release_plan_no_sensor_files_staged_or_uploaded",
+  "access_classification": "pending_classification_not_approved_for_external_upload",
+  "canonical_recordings": 114,
+  "canonical_participants": 15,
+  "directory_inventory_date": "mixed_base_2026_10_04_and_supplement_2026_10_29",
+  "directory_inventory_dates": [
+    "2026-10-04",
+    "2026-10-29"
+  ],
+  "inventory_basis": "immutable_base_inventory_plus_confirmed_equivalent_RGB_source_supplement",
+  "supplemental_rgb_inventory": {
+    "files": 4048,
+    "bytes": 2163596374,
+    "recordings": 3,
+    "image_payloads_hashed": 0,
+    "historical_count_and_filename_matches": 114
+  },
+  "existing_native_checksum_date": "2026-10-29",
+  "scope_totals": {
+    "primary_raw_candidate": {
+      "files": 256534,
+      "inventory_bytes": 188749460902,
+      "planned_chunks": 840
+    },
+    "optional_adc_mat_variant": {
+      "files": 30817,
+      "inventory_bytes": 183289680753,
+      "planned_chunks": 76
+    }
+  },
+  "modality_coverage": [
+    {
+      "modality": "radar_native_adc",
+      "scope": "primary_raw_candidate",
+      "files": 360,
+      "inventory_bytes": 60897792000,
+      "recordings_with_inventoried_files": 90,
+      "participants_with_inventoried_files": 12,
+      "cloud_or_recall_files": 0,
+      "cloud_or_recall_files_2026_10_04": 0,
+      "supplemental_inventory_files_2026_10_29": 0,
+      "supplemental_inventory_bytes_2026_10_29": 0,
+      "existing_sha256_files_2026_10_29": 360
+    },
+    {
+      "modality": "radar_native_index",
+      "scope": "primary_raw_candidate",
+      "files": 360,
+      "inventory_bytes": 7620864,
+      "recordings_with_inventoried_files": 90,
+      "participants_with_inventoried_files": 12,
+      "cloud_or_recall_files": 0,
+      "cloud_or_recall_files_2026_10_04": 0,
+      "supplemental_inventory_files_2026_10_29": 0,
+      "supplemental_inventory_bytes_2026_10_29": 0,
+      "existing_sha256_files_2026_10_29": 360
+    },
+    {
+      "modality": "radar_acquisition_metadata",
+      "scope": "primary_raw_candidate",
+      "files": 270,
+      "inventory_bytes": 3611357,
+      "recordings_with_inventoried_files": 90,
+      "participants_with_inventoried_files": 12,
+      "cloud_or_recall_files": 0,
+      "cloud_or_recall_files_2026_10_04": 0,
+      "supplemental_inventory_files_2026_10_29": 0,
+      "supplemental_inventory_bytes_2026_10_29": 0,
+      "existing_sha256_files_2026_10_29": 0
+    },
+    {
+      "modality": "rgb",
+      "scope": "primary_raw_candidate",
+      "files": 189835,
+      "inventory_bytes": 101109498876,
+      "recordings_with_inventoried_files": 114,
+      "participants_with_inventoried_files": 15,
+      "cloud_or_recall_files": 132105,
+      "cloud_or_recall_files_2026_10_04": 129923,
+      "supplemental_inventory_files_2026_10_29": 4048,
+      "supplemental_inventory_bytes_2026_10_29": 2163596374,
+      "existing_sha256_files_2026_10_29": 0,
+      "recording_directory_status": {
+        "multiple_inventoried_images": 114,
+        "single_inventoried_image": 0,
+        "no_inventoried_images": 0,
+        "interpretation": "Nonempty directories are counted as availability, not complete image sequences."
+      }
+    },
+    {
+      "modality": "thermal",
+      "scope": "primary_raw_candidate",
+      "files": 65367,
+      "inventory_bytes": 26690659619,
+      "recordings_with_inventoried_files": 114,
+      "participants_with_inventoried_files": 15,
+      "cloud_or_recall_files": 57669,
+      "cloud_or_recall_files_2026_10_04": 57669,
+      "supplemental_inventory_files_2026_10_29": 0,
+      "supplemental_inventory_bytes_2026_10_29": 0,
+      "existing_sha256_files_2026_10_29": 0
+    },
+    {
+      "modality": "rgb_pulse_acquisition_table",
+      "scope": "primary_raw_candidate",
+      "files": 114,
+      "inventory_bytes": 5185257,
+      "recordings_with_inventoried_files": 114,
+      "participants_with_inventoried_files": 15,
+      "cloud_or_recall_files": 0,
+      "cloud_or_recall_files_2026_10_04": 0,
+      "supplemental_inventory_files_2026_10_29": 0,
+      "supplemental_inventory_bytes_2026_10_29": 0,
+      "existing_sha256_files_2026_10_29": 0
+    },
+    {
+      "modality": "thermal_acquisition_table",
+      "scope": "primary_raw_candidate",
+      "files": 114,
+      "inventory_bytes": 1428384,
+      "recordings_with_inventoried_files": 114,
+      "participants_with_inventoried_files": 15,
+      "cloud_or_recall_files": 12,
+      "cloud_or_recall_files_2026_10_04": 12,
+      "supplemental_inventory_files_2026_10_29": 0,
+      "supplemental_inventory_bytes_2026_10_29": 0,
+      "existing_sha256_files_2026_10_29": 0
+    },
+    {
+      "modality": "person_annotations_source",
+      "scope": "primary_raw_candidate",
+      "files": 114,
+      "inventory_bytes": 33664545,
+      "recordings_with_inventoried_files": 114,
+      "participants_with_inventoried_files": 15,
+      "cloud_or_recall_files": 0,
+      "cloud_or_recall_files_2026_10_04": 0,
+      "supplemental_inventory_files_2026_10_29": 0,
+      "supplemental_inventory_bytes_2026_10_29": 0,
+      "existing_sha256_files_2026_10_29": 0
+    },
+    {
+      "modality": "radar_stored_adc",
+      "scope": "optional_adc_mat_variant",
+      "files": 30817,
+      "inventory_bytes": 183289680753,
+      "recordings_with_inventoried_files": 76,
+      "participants_with_inventoried_files": 10,
+      "cloud_or_recall_files": 10516,
+      "cloud_or_recall_files_2026_10_04": 10516,
+      "supplemental_inventory_files_2026_10_29": 0,
+      "supplemental_inventory_bytes_2026_10_29": 0,
+      "existing_sha256_files_2026_10_29": 0
+    }
+  ],
+  "native_existing_integrity": {
+    "files": 720,
+    "bytes": 60905412864,
+    "recordings": 90,
+    "new_sensor_hashes_computed_by_this_script": 0
+  },
+  "chunk_planning": {
+    "target_logical_payload_limit_bytes": 10000000000,
+    "planned_chunks": 916,
+    "maximum_logical_payload_bytes": 2689264541,
+    "archive_files_created": 0,
+    "actual_archive_sizes": "not_measured_no_archives_created; container_overhead_and_compression_not_estimated",
+    "granularity": "per_recording_and_modality; original_device_chunk_frame_filenames_preserved"
+  },
+  "coverage_caveats": [
+    "Availability combines the immutable 4 October inventory with the separately dated 29 October directory-metadata supplement when present; zero does not prove an acquisition never existed.",
+    "RGB recording-directory coverage is calculated from the combined filename inventory. A filename or historical filename-list hash is not an image-payload checksum.",
+    "Native radar is inventoried for 90 recordings and 12 participants; the 24 recordings from the other three participants have no assigned native radar in this inventory.",
+    "MAT files are ADC-level frame exports, documented by the retained reader as already frequency/phase calibrated; they are not engineered model features.",
+    "MAT ADC exports and native ADC binaries represent overlapping radar acquisitions and must not be added as independent modality coverage.",
+    "Recorded pulse sensor values occur in RGB acquisition tables; physiological validity and sensor clock alignment are not established by file availability.",
+    "Thermal image files are saved image representations; this inventory does not establish access to radiometric raw sensor matrices.",
+    "Annotation exports and acquisition tables still need release-format sanitisation; original payloads have not been inspected by this preparation script.",
+    "Base cloud/recall flags are from 4 October; supplemental flags are from the bounded three-directory 29 October check. No fresh full-collection scan was performed.",
+    "Only native radar ADC/index has the existing 29 October payload checksum evidence; all other counts remain inventory-level."
+  ],
+  "excluded_unassigned_files": 39,
+  "excluded_unassigned_bytes": 28889184,
+  "operations": {
+    "sensor_payloads_opened": 0,
+    "sensor_files_copied": 0,
+    "sensor_files_hydrated": 0,
+    "sensor_hashes_computed": 0,
+    "remote_writes": 0
+  },
+  "public_summary_contains": "aggregate_counts_and_sizes_only; no_source_paths_or_participant_recording_crosswalk"
+}
