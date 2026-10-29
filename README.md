@@ -264,8 +264,7 @@ The metadata tables provide the joins needed to interpret the folders:
 The repository includes the project's radar frontend, metadata builders and
 person-box exporter, with portable entry points for use on the supplied files.
 The radar modules and the original timing parser/classifier are retained; the
-command-line wrappers make input paths and output directories explicit. Source
-bindings are recorded in [the processing-source manifest](code/processing_sources.json).
+command-line wrappers make input paths and output directories explicit.
 
 The workflows below start from an approved data bundle. They write results into
 new output directories and preserve the supplied sensor files.
@@ -473,16 +472,20 @@ Human Invasive Ethics Committee, reference **2358867**.
 **Contributors:** Maria Mwanje (data collection) and David Adama (supervision),
 Nottingham Trent University.
 
-When using RAD-EMO, identify the collection, the supplied data version or subset,
-and the processing settings used. Cite this repository for its documentation and
-processing code:
+RAD-EMO will be introduced in the joint paper **Joint Recognition of Knife
+Carriage and Reported Affect from Radar and Video**, by Ogonna Okafor, Maria
+Drolence Mwanje and David Ada Adama. This paper is the intended reference for
+the dataset. Its public link and final publication details will be added here
+when available.
+
+When reporting results, also identify the supplied data version or subset and
+the processing settings used.
 
 ```bibtex
-@misc{okafor_rad_emo,
-  author       = {Okafor, Ogonna},
-  title        = {{RAD-EMO}: Multimodal laboratory recordings of object carriage and reported affect},
-  howpublished = {Dataset documentation and processing code},
-  url          = {https://github.com/Ogoskino/RAD-EMO},
-  note         = {Data available upon reasonable request}
+@unpublished{okafor_joint_carriage_affect,
+  author = {Okafor, Ogonna and Mwanje, Maria Drolence and Adama, David Ada},
+  title  = {Joint Recognition of Knife Carriage and Reported Affect from Radar and Video},
+  year   = {2026},
+  note   = {Manuscript}
 }
 ```
