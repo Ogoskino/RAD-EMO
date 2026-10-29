@@ -2,113 +2,128 @@
 
 **Multimodal laboratory recordings of object carriage and reported affect**
 
-RAD-EMO brings together RGB images, thermal images, millimetre-wave radar
-measurements and contact-pulse acquisition records from **114 recordings with
-15 participants**. Its **38 protocol conditions**, each recorded three times,
-vary object carriage, still or walking activity, placement and prompted affect.
-Participants report valence, arousal and dominance after each recording.
+[**Request dataset access**](mailto:ogonna.okafor@ntu.ac.uk?subject=RAD-EMO%20dataset%20request)
 
-The collection supports research on carried-object recognition, reported affect,
-contactless sensing and multimodal analysis. Recording identifiers connect the
-sensor files, acquisition metadata, annotations and labels.
+RAD-EMO contains **114 recordings from 15 participants** across **38 protocol
+conditions**, each recorded three times. Participants performed stationary and
+walking activities while carrying a phone, a harmless replica knife, both objects
+or neither. The protocol varies object placement and prompted affect, alongside
+participants' self-reported valence, arousal and dominance.
 
-**Zenodo:** [10.5281/zenodo.23765400](https://doi.org/10.5281/zenodo.23765400)
-is reserved; the dataset deposit is in preparation. This repository provides
-documentation, illustrations, aggregate metadata and verification utilities.
+The collection combines RGB and thermal images, millimetre-wave radar measurements,
+pulse acquisition records, person annotations and recording labels. It supports
+research on carried-object recognition, reported affect and multimodal sensing.
 
-![Conceptual overview of RAD-EMO, showing RGB, thermal, radar and pulse channels linked at recording level.](assets/rad_emo_dataset_overview.png)
+![Conceptual overview of the RAD-EMO sensors and recording setup.](assets/rad_emo_dataset_overview.png)
 
-*Conceptual illustration of the collection; the depicted scene and sensor outputs
-are schematic.*
+*Conceptual illustration generated to explain the collection.*
 
-## Collection at a glance
+## Dataset contents
 
-| Item | Current collection inventory |
+| Component | Coverage and format |
 | --- | --- |
-| Participants / recordings | 15 / 114 |
-| Protocol conditions | 38, each recorded three times |
-| Activity | 60 still and 54 walking recordings |
-| RGB | 189,835 images across 114 recordings; 640 × 480 pixels |
-| RGB timing | Variable saved cadence, approximately 30–36 images/s; use recorded frame timestamps |
-| Thermal | 65,367 images across 114 recordings, with frame/time tables |
-| Native radar | ADC binaries and indexes for 90 recordings from 12 participants |
-| Radar system | 77 GHz TI cascade MIMO; 12 transmitters, 16 receivers; nominal 15 frames/s |
-| Contact pulse | Acquisition fields recorded alongside RGB frame timestamps |
-| Reported affect | Valence, arousal and dominance on recorded 0–9 scales |
+| RGB | 189,835 PNG images, 640 × 480 pixels, across 114 recordings |
+| Thermal | 65,367 PNG images across 114 recordings |
+| Native radar | ADC binaries, frame indexes and acquisition configuration for 90 recordings from 12 participants |
+| Radar hardware | 77 GHz TI cascade MIMO system; 12 transmitters and 16 receivers |
+| Complex ADC MAT exports | Optional processed samples for 76 recordings from 10 participants |
+| Pulse and acquisition records | CSV tables alongside RGB frames; separate thermal acquisition tables |
+| Annotations and labels | Available person annotations, protocol conditions and self-reported affect |
 
-Counts describe the inventoried collection. Modality availability and observation
-support are recorded separately; see [sensor-data coverage](RAW_DATA.md).
+There are 60 stationary and 54 walking recordings. Modality availability varies
+by recording; requested subsets can cover selected sensors or recording IDs.
 
-## Recording conditions and labels
+## Dataset file structure
 
-![Conceptual guide to RAD-EMO object-carriage, activity and placement categories, and the valence, arousal and dominance scales.](assets/rad_emo_recording_conditions.png)
+The existing collection is held in separate modality folders on institutional
+OneDrive. The tree below shows their actual organisation, using the first
+participant and recording as an example. Labels and timing tables link the folders.
 
-*Recording categories and reported-affect scales.*
+```text
+RGB and pulse: rgb+mmw_exp2/
+|-- P_1/
+    |-- P_1_S_1/
+        |-- color_frames/
+        |   |-- color_frame_0.png
+        |   |-- ...
+        |-- data.csv
+        |-- 2D-on-2D_annotations_export.json
 
-Object conditions comprise no target object, phone, harmless replica knife,
-and phone plus replica knife. The protocol also varies still/walking activity
-and open/concealed placement. These are recording-protocol fields; prompted
-affect and subsequent self-reports are retained separately.
+Thermal: thermal_data_exp2/
+|-- P_1/
+    |-- P_1_S_1/
+        |-- thermal_frames/
+        |   |-- thermal_frame_0.png
+        |   |-- ...
+        |-- data.csv
 
-The declared low-valence/high-arousal label is
-`valence <= 4 and arousal >= 6`. A joint label combines this report with
-protocol-assigned knife carriage. These labels describe the recorded protocol
-attributes and participants' affect reports. Field definitions and
-the categorical T1–T4 mapping are in the [dataset card](DATASET_CARD.md) and
-[data dictionary](DATA_DICTIONARY.md).
+Native radar: PostProc - Copy/
+|-- Cascade_Capture_p1_s1/
+    |-- master_0000_data.bin
+    |-- master_0000_idx.bin
+    |-- slave1_0000_data.bin
+    |-- slave1_0000_idx.bin
+    |-- slave2_0000_data.bin
+    |-- slave2_0000_idx.bin
+    |-- slave3_0000_data.bin
+    |-- slave3_0000_idx.bin
+    |-- Cascade_Capture_p1_s1.mmwave.json
+    |-- Cascade_Capture_p1_s1.setup.json
+    |-- Cascade_Capture_p1_s1_LogFile.txt
 
-## Sensor files and temporal alignment
-
-The main dataset scope includes image sequences and native radar measurements,
-together with acquisition records, annotation exports, labels and timing
-provenance. Native radar files retain the four devices' ADC/index correspondence
-and acquisition settings. Existing complex ADC MAT exports form an optional
-processed representation; derived features and saved analysis inputs form a
-separate companion layer.
-
-RGB, thermal and radar streams are associated by recording and temporally aligned
-using recorded camera/thermal timestamps, authentic radar relative timing and
-documented cross-sensor offsets. Alignment supports approximate session/window
-analysis, with reconstruction methods and assigned uncertainties retained in the
-timing tables. Native sampling and recorded gaps are preserved.
-
-See [images and sensor recordings](RAW_DATA.md) for coverage and
-[directory structure](docs/DIRECTORY_STRUCTURE.md) for the repository layout
-and proposed recording-level archive paths.
-
-## Explore the repository
-
-| Resource | Contents |
-| --- | --- |
-| [Dataset card](DATASET_CARD.md) | Collection, targets, observation support and timing |
-| [Directory structure](docs/DIRECTORY_STRUCTURE.md) | Files in this repository and proposed sensor archive organisation |
-| [Data dictionary](DATA_DICTIONARY.md) | Recording, clip, file and array field definitions |
-| [Collection summary](metadata/collection_summary.json) | Machine-readable collection counts and sampling metadata |
-| [Data access](ACCESS.md) | Access routes, embargo and reuse conditions |
-| [Zenodo deposit](ZENODO.md) | Deposit scope and relationship to institutional preservation |
-| [Associated studies](PAPERS.md) | Study-specific clip sets and participant partitions |
-| [Citation](CITATION.md) | Creator and dataset citation status |
-
-The repository's two [illustrations](assets/) were generated as conceptual
-figures. Their [generation prompts](assets/illustration_prompts.json) are retained
-for provenance. Participant sensor recordings belong in the corresponding data
-archive, outside this documentation repository.
-
-## Verify supplied files
-
-The utilities run with the Python standard library. Use the manifest and checksum
-list supplied with the relevant approved archive version:
-
-```sh
-python tools/validate_manifest.py path/to/file_manifest.csv
-python tools/verify_checksums.py path/to/download path/to/SHA256SUMS
+Labels and alignment: RAD_EMO_DATASET_v1.0.0/
+|-- metadata/
+|   |-- sessions.csv
+|   |-- conditions.csv
+|   |-- emotion_self_report.csv
+|   |-- derived_labels.csv
+|-- synchronization/
+    |-- v2/
+        |-- active_intervals.csv
+        |-- dataset_view_v2.json
 ```
 
-Study reproduction additionally requires the exact versioned inputs, support masks
-and participant allocations described in [PAPERS.md](PAPERS.md).
+`P_1_S_1`, `Cascade_Capture_p1_s1` and the label-table ID `P1S1` refer to the
+same recording. Other participants and recordings follow the corresponding
+naming convention. Original RGB files for the first participant's first three
+recordings also reside under `realsense_data/P_1/`; each frame is selected once
+when assembling a requested subset.
 
-## Access, reuse and citation
+Where available, optional MAT exports are stored in the camera/radar recording
+folders, for example
+`rgb+mmw_exp2/P_10/P_10_S_1/Cascade_Capture_p10_s1/adcData_frame_0001.mat`.
+They represent processed ADC samples from the same sensor collection.
 
-Ogonna Okafor, Nottingham Trent University, is the confirmed dataset creator.
-Access and reuse terms will accompany the dataset release. See [ACCESS.md](ACCESS.md)
-and [CITATION.md](CITATION.md) for the current details.
+## Labels and timing
+
+Protocol labels record activity, object presence, placement and prompted affect.
+Self-reported valence, arousal and dominance are recorded separately on 0–9 scales.
+Low valence with high arousal is defined as `valence <= 4 and arousal >= 6`.
+
+RGB and thermal acquisition tables retain frame timestamps. The saved RGB cadence
+varies, with whole-recording rates of approximately 30–36 images per second.
+Radar indexes retain relative frame timing; the alignment tables document
+approximate association between sensors at recording and window level. Pulse
+readings are logged alongside RGB acquisition rows.
+
+![Conceptual guide to recording conditions and reported-affect scales.](assets/rad_emo_recording_conditions.png)
+
+*Conceptual illustration of the protocol categories and affect scales.*
+
+## Data access
+
+The dataset is **available upon reasonable request for research purposes**.
+Email [ogonna.okafor@ntu.ac.uk](mailto:ogonna.okafor@ntu.ac.uk?subject=RAD-EMO%20dataset%20request)
+with your affiliation, intended research use and the sensors or recordings you
+need. Requests are reviewed under the study's participant consent and data
+management arrangements. Approved files are shared through a OneDrive link.
+
+The button at the top opens an email request. This repository contains the
+collection description and the two illustrations.
+
+## Credits
+
+**Creator and contact:** Ogonna Okafor, Nottingham Trent University.
+
+**Contributors:** Maria Mwanje (data collection) and David Adama (supervision),
+Nottingham Trent University.
