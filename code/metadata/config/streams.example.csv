@@ -1,0 +1,3 @@
+session_id,modality,acquisition_csv,frames_dir
+<session_id_from_intervals>,rgb,<path_to_rgb_acquisition_csv>,<path_to_color_frames_directory>
+<session_id_from_intervals>,thermal,<path_to_thermal_acquisition_csv>,<path_to_thermal_frames_directory>

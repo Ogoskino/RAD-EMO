@@ -1,0 +1,7 @@
+{
+  "schema": "rad-emo-local-paths-v1",
+  "rgb_mmw_exp2_root": "<path-to-rgb+mmw_exp2>",
+  "thermal_exp2_root": "<path-to-thermal_data_exp2>",
+  "provisional_radar_timestamps_root": "<path-to-mmwave_timestamps_exp2_provisional_v2>",
+  "raw_data_policy": "read_only"
+}

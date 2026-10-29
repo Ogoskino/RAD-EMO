@@ -1,0 +1,222 @@
+{
+  "schema": "rad_emo_public_processing_sources_v1",
+  "radar": {
+    "retained_modules": [
+      {
+        "file": "code/radar/mmwave_ti_native_ra/__init__.py",
+        "original_module": "__init__.py",
+        "source_sha256": "d6ab27ba7580564a1fdd08c8b390e59a5dcbce8515e7fe16acaa5ebca5467d81",
+        "published_sha256": "d6ab27ba7580564a1fdd08c8b390e59a5dcbce8515e7fe16acaa5ebca5467d81",
+        "adaptation": "Unchanged project module"
+      },
+      {
+        "file": "code/radar/mmwave_ti_native_ra/contracts.py",
+        "original_module": "contracts.py",
+        "source_sha256": "c5eda1fdcd8eb5eac270dc93373df7e95a5980750dcda66a01a8d3c1eb63d366",
+        "published_sha256": "c5eda1fdcd8eb5eac270dc93373df7e95a5980750dcda66a01a8d3c1eb63d366",
+        "adaptation": "Unchanged project module"
+      },
+      {
+        "file": "code/radar/mmwave_ti_native_ra/diagnostics.py",
+        "original_module": "diagnostics.py",
+        "source_sha256": "1c750a13082042fb54c49f4247b66a5d2c7be9b8c34a12e62e39d34b8892d96d",
+        "published_sha256": "1c750a13082042fb54c49f4247b66a5d2c7be9b8c34a12e62e39d34b8892d96d",
+        "adaptation": "Unchanged project module"
+      },
+      {
+        "file": "code/radar/mmwave_ti_native_ra/frontend.py",
+        "original_module": "frontend.py",
+        "source_sha256": "e53da8964d2d664eac8d04958660d397883959feeb9f39f6e25f102e72637548",
+        "published_sha256": "e53da8964d2d664eac8d04958660d397883959feeb9f39f6e25f102e72637548",
+        "adaptation": "Unchanged project module"
+      },
+      {
+        "file": "code/radar/mmwave_ti_native_ra/io.py",
+        "original_module": "io.py",
+        "source_sha256": "6ee43b67f2da2dd0c7040efe30f32f04cedbd999e82761ea735f08afef6a9ff6",
+        "published_sha256": "6ee43b67f2da2dd0c7040efe30f32f04cedbd999e82761ea735f08afef6a9ff6",
+        "adaptation": "Unchanged project module"
+      },
+      {
+        "file": "code/radar/mmwave_ti_native_ra/roi.py",
+        "original_module": "roi.py",
+        "source_sha256": "a803d10ea106f2a31166a48b6e9203f10edf3f0c9ccf1b9c1802322c96a2012c",
+        "published_sha256": "a803d10ea106f2a31166a48b6e9203f10edf3f0c9ccf1b9c1802322c96a2012c",
+        "adaptation": "Unchanged project module"
+      },
+      {
+        "file": "code/radar/mmwave_ti_native_ra/streaming.py",
+        "original_module": "streaming.py",
+        "source_sha256": "179d3465aba4d0c194a6b485492f0deaea43719c69ec5d788678047bf9ef68a2",
+        "published_sha256": "179d3465aba4d0c194a6b485492f0deaea43719c69ec5d788678047bf9ef68a2",
+        "adaptation": "Unchanged project module"
+      }
+    ],
+    "portable_entry_points": [
+      "code/radar/process_adc_mat.py",
+      "code/radar/process_adc_recording.py"
+    ],
+    "default_variant": "as_saved",
+    "reference_environment": {
+      "python": "3.12.7",
+      "numpy": "1.26.4",
+      "h5py": "3.11.0",
+      "scipy": "1.13.1"
+    },
+    "matlab_adapter": "code/radar/matlab/export_adc_frames.m",
+    "matlab_runtime_validation": "Source-reviewed; not executed against participant recordings"
+  },
+  "metadata": {
+    "retained_source_bindings": [
+      {
+        "file": "code/metadata/build_metadata_v1.py",
+        "original_source": "RAD_EMO_DATASET_v1.0.0/processing/build_metadata_v1.py",
+        "source_sha256": "43d614ad09de7c3fa43b12338f246d10c48f6bde4205fd39557414d753f14e9d",
+        "published_sha256": "d2375eb74a3bc4633991e52a28597f523b98a7e025e99d917792e29b013dc537",
+        "adaptations": [
+          "Removed personal/default source locations; required explicit CLI arguments.",
+          "Required new explicit output directories and exclusive output file creation.",
+          "Scientific parsing, source-hash checks and canonical cohort/identifier checks preserved."
+        ]
+      },
+      {
+        "file": "code/metadata/audit_dataset_v1.py",
+        "original_source": "RAD_EMO_DATASET_v1.0.0/processing/audit_dataset_v1.py",
+        "source_sha256": "110629d5ce6418502b462c1b4e1a6699bac1e5272184e14ad7ae0d78cee23748",
+        "published_sha256": "0d7d35c3a81bc1d7d4abecb8b8233a56804244f50a60118efdfbf05451fc9138",
+        "adaptations": [
+          "Removed personal/default source locations; required explicit CLI arguments.",
+          "Required new explicit output directories and exclusive output file creation.",
+          "Scientific parsing, source-hash checks and canonical cohort/identifier checks preserved."
+        ]
+      },
+      {
+        "file": "code/metadata/reference/build_active_intervals_v1.py",
+        "original_source": "RAD_EMO_DATASET_v1.0.0/processing/build_active_intervals_v1.py",
+        "source_sha256": "df248e4ca590ab32e40fe447f20857151b419471c2a7bceedafed86a4e1f51a7",
+        "published_sha256": "df248e4ca590ab32e40fe447f20857151b419471c2a7bceedafed86a4e1f51a7",
+        "adaptations": []
+      }
+    ],
+    "alignment_adapter": "code/metadata/align_frames.py",
+    "algorithm_source": "code/metadata/reference/build_active_intervals_v1.py",
+    "clock_handling": "Classifies supplied timestamps and intervals; preserves supplied reconstruction and uncertainty"
+  },
+  "images": {
+    "original_exporter": "yolov8_export_2d_annotations.py",
+    "source_sha256": "aa53ae063382b1ef0fc33f5cd52ca43676987ac48fdd7aa989e31496e922e5d6",
+    "portable_exporter": "code/images/yolov8_export_2d_annotations.py",
+    "adaptations": [
+      "required non-overlapping output root",
+      "label-map or canonical session CSV instead of interactive class entry",
+      "normalised recording IDs",
+      "lazy detector/progress imports",
+      "separate output path retains original annotation JSONs"
+    ],
+    "detector_defaults": {
+      "weights": "yolov8x.pt",
+      "confidence": 0.25,
+      "image_size": 640,
+      "selection": "largest eligible person"
+    },
+    "historical_detector_library_version": "Not recorded in the available source environment"
+  },
+  "files": [
+    {
+      "file": "code/images/requirements.txt",
+      "sha256": "72fd41a89a06661c96154a0a89db3261a93f3fb6d3891f006f597a98058d3f34"
+    },
+    {
+      "file": "code/images/test_yolov8_export_2d_annotations.py",
+      "sha256": "f8e04b09961686d37a20ff3c783dbbe298115ae26dc53d8e9ab78c839fd04fac"
+    },
+    {
+      "file": "code/images/yolov8_export_2d_annotations.py",
+      "sha256": "7c04ff1398bec6c50dffd988a429d497f6682b6ce9e850f0d1ba29663d19a4a8"
+    },
+    {
+      "file": "code/metadata/align_frames.py",
+      "sha256": "6f3886f4731d4b53c958c29e438fc91580f65964f8e5dc0e097fdaea3a817805"
+    },
+    {
+      "file": "code/metadata/audit_dataset_v1.py",
+      "sha256": "0d7d35c3a81bc1d7d4abecb8b8233a56804244f50a60118efdfbf05451fc9138"
+    },
+    {
+      "file": "code/metadata/build_metadata_v1.py",
+      "sha256": "d2375eb74a3bc4633991e52a28597f523b98a7e025e99d917792e29b013dc537"
+    },
+    {
+      "file": "code/metadata/config/paths.example.json",
+      "sha256": "7cd8a8ced3c689246f2644170eae15abda65891176947904483ce50e507fa0a0"
+    },
+    {
+      "file": "code/metadata/config/streams.example.csv",
+      "sha256": "c535efd3a63a4559ae9a1dc9cad4d50b5e474317f84f1420efae3b544ed2be8d"
+    },
+    {
+      "file": "code/metadata/reference/build_active_intervals_v1.py",
+      "sha256": "df248e4ca590ab32e40fe447f20857151b419471c2a7bceedafed86a4e1f51a7"
+    },
+    {
+      "file": "code/metadata/tests/test_align_frames.py",
+      "sha256": "189046672261e7e6037b8d52c355da1da3a286bfc3863d67c8fbc0e489116d35"
+    },
+    {
+      "file": "code/metadata/tests/test_metadata_copies.py",
+      "sha256": "b6dbac392cd45b5a2c989d26ca76ec71f043dbe8d1b6ea0a3ef4d481efc63fbc"
+    },
+    {
+      "file": "code/radar/matlab/export_adc_frames.m",
+      "sha256": "adc39673999cd6589b5f95b567326c9ca15ff8ca9466b038191795f192cb96ba"
+    },
+    {
+      "file": "code/radar/mmwave_ti_native_ra/__init__.py",
+      "sha256": "d6ab27ba7580564a1fdd08c8b390e59a5dcbce8515e7fe16acaa5ebca5467d81"
+    },
+    {
+      "file": "code/radar/mmwave_ti_native_ra/contracts.py",
+      "sha256": "c5eda1fdcd8eb5eac270dc93373df7e95a5980750dcda66a01a8d3c1eb63d366"
+    },
+    {
+      "file": "code/radar/mmwave_ti_native_ra/diagnostics.py",
+      "sha256": "1c750a13082042fb54c49f4247b66a5d2c7be9b8c34a12e62e39d34b8892d96d"
+    },
+    {
+      "file": "code/radar/mmwave_ti_native_ra/frontend.py",
+      "sha256": "e53da8964d2d664eac8d04958660d397883959feeb9f39f6e25f102e72637548"
+    },
+    {
+      "file": "code/radar/mmwave_ti_native_ra/io.py",
+      "sha256": "6ee43b67f2da2dd0c7040efe30f32f04cedbd999e82761ea735f08afef6a9ff6"
+    },
+    {
+      "file": "code/radar/mmwave_ti_native_ra/roi.py",
+      "sha256": "a803d10ea106f2a31166a48b6e9203f10edf3f0c9ccf1b9c1802322c96a2012c"
+    },
+    {
+      "file": "code/radar/mmwave_ti_native_ra/streaming.py",
+      "sha256": "179d3465aba4d0c194a6b485492f0deaea43719c69ec5d788678047bf9ef68a2"
+    },
+    {
+      "file": "code/radar/process_adc_mat.py",
+      "sha256": "84c3adae881ca6f6e0e5ab10e46c2a945447b0d40d6084fef16079dbb0e0affb"
+    },
+    {
+      "file": "code/radar/process_adc_recording.py",
+      "sha256": "b4f9d45b54a1590d82847fecaf2f9827b41e89526882d1821d66b26e5e7f19c9"
+    },
+    {
+      "file": "code/radar/requirements.txt",
+      "sha256": "540bfa36304fe8c397dbbc03644d08c2684c35f58d70fa2d4f5dab87c3abb285"
+    },
+    {
+      "file": "code/radar/test_process_adc_mat.py",
+      "sha256": "b32d3dc68dcdaafb9548677e39ed3c77a9ff4b6f804e4cf1d3effd3a051d264f"
+    },
+    {
+      "file": "code/radar/test_process_adc_recording.py",
+      "sha256": "a3387d4db0080f9259862c48f59b9d94fa5f5d533e4c1fe40bb7a881acd1bc8f"
+    }
+  ]
+}
