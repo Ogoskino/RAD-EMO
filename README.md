@@ -14,9 +14,9 @@ The collection combines RGB and thermal images, millimetre-wave radar measuremen
 pulse acquisition records, person annotations and recording labels. It supports
 research on carried-object recognition, reported affect and multimodal sensing.
 
-![Conceptual overview of the RAD-EMO sensors and recording setup.](assets/rad_emo_dataset_overview.png)
+![RAD-EMO sensors and recording setup.](assets/rad_emo_dataset_overview.png)
 
-*Conceptual illustration generated to explain the collection.*
+*RAD-EMO collection overview.*
 
 ## Dataset contents
 
@@ -24,9 +24,9 @@ research on carried-object recognition, reported affect and multimodal sensing.
 | --- | --- |
 | RGB | 189,835 PNG images, 640 × 480 pixels, across 114 recordings |
 | Thermal | 65,367 PNG images across 114 recordings |
-| Native radar | ADC binaries, frame indexes and acquisition configuration for 90 recordings from 12 participants |
+| Radar ADC frames | 30,817 complex-sample MAT files across 76 recordings from 10 participants |
 | Radar hardware | 77 GHz TI cascade MIMO system; 12 transmitters and 16 receivers |
-| Complex ADC MAT exports | Optional processed samples for 76 recordings from 10 participants |
+| Original radar captures | Separate binary data, indexes and acquisition configuration for 90 recordings from 12 participants |
 | Pulse and acquisition records | CSV tables alongside RGB frames; separate thermal acquisition tables |
 | Annotations and labels | Available person annotations, protocol conditions and self-reported affect |
 
@@ -36,40 +36,31 @@ by recording; requested subsets can cover selected sensors or recording IDs.
 ## Dataset file structure
 
 The existing collection is held in separate modality folders on institutional
-OneDrive. The tree below shows their actual organisation, using the first
-participant and recording as an example. Labels and timing tables link the folders.
+OneDrive. The tree below shows their actual organisation, using participant 2,
+recording 1 as an example with RGB, thermal and radar ADC frame files. Labels and
+timing tables link the folders.
 
 ```text
-RGB and pulse: rgb+mmw_exp2/
-|-- P_1/
-    |-- P_1_S_1/
+RGB, pulse and radar ADC frames: rgb+mmw_exp2/
+|-- P_2/
+    |-- P_2_S_1/
         |-- color_frames/
         |   |-- color_frame_0.png
         |   |-- ...
         |-- data.csv
         |-- 2D-on-2D_annotations_export.json
+        |-- Cascade_Capture_p2_s1/
+            |-- adcData_frame_0001.mat
+            |-- adcData_frame_0002.mat
+            |-- ...
 
 Thermal: thermal_data_exp2/
-|-- P_1/
-    |-- P_1_S_1/
+|-- P_2/
+    |-- P_2_S_1/
         |-- thermal_frames/
         |   |-- thermal_frame_0.png
         |   |-- ...
         |-- data.csv
-
-Native radar: PostProc - Copy/
-|-- Cascade_Capture_p1_s1/
-    |-- master_0000_data.bin
-    |-- master_0000_idx.bin
-    |-- slave1_0000_data.bin
-    |-- slave1_0000_idx.bin
-    |-- slave2_0000_data.bin
-    |-- slave2_0000_idx.bin
-    |-- slave3_0000_data.bin
-    |-- slave3_0000_idx.bin
-    |-- Cascade_Capture_p1_s1.mmwave.json
-    |-- Cascade_Capture_p1_s1.setup.json
-    |-- Cascade_Capture_p1_s1_LogFile.txt
 
 Labels and alignment: RAD_EMO_DATASET_v1.0.0/
 |-- metadata/
@@ -83,16 +74,17 @@ Labels and alignment: RAD_EMO_DATASET_v1.0.0/
         |-- dataset_view_v2.json
 ```
 
-`P_1_S_1`, `Cascade_Capture_p1_s1` and the label-table ID `P1S1` refer to the
+`P_2_S_1`, `Cascade_Capture_p2_s1` and the label-table ID `P2S1` refer to the
 same recording. Other participants and recordings follow the corresponding
 naming convention. Original RGB files for the first participant's first three
 recordings also reside under `realsense_data/P_1/`; each frame is selected once
 when assembling a requested subset.
 
-Where available, optional MAT exports are stored in the camera/radar recording
-folders, for example
-`rgb+mmw_exp2/P_10/P_10_S_1/Cascade_Capture_p10_s1/adcData_frame_0001.mat`.
-They represent processed ADC samples from the same sensor collection.
+Each `adcData_frame_*.mat` file contains the complex ADC samples for one radar
+frame. These are processed ADC-level exports, before downstream FFT-based
+representations. The original binary captures, their indexes and acquisition
+configuration are stored separately under `PostProc - Copy/`; their coverage is
+listed separately in the contents table.
 
 ## Labels and timing
 
@@ -106,9 +98,9 @@ Radar indexes retain relative frame timing; the alignment tables document
 approximate association between sensors at recording and window level. Pulse
 readings are logged alongside RGB acquisition rows.
 
-![Conceptual guide to recording conditions and reported-affect scales.](assets/rad_emo_recording_conditions.png)
+![Recording conditions and reported-affect scales.](assets/rad_emo_recording_conditions.png)
 
-*Conceptual illustration of the protocol categories and affect scales.*
+*Object-carriage conditions and reported-affect scales.*
 
 ## Data access
 
